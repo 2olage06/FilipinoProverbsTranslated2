@@ -2,8 +2,11 @@ package com.example.kent.filipinoproverbstranslated;
 
 import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v4.view.MenuItemCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -39,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(updateIntent);}
         });
 
-        DatabaseHelper db = new DatabaseHelper(this);
+        //DatabaseHelper db = new DatabaseHelper(this);
 
     }
 
@@ -50,6 +53,9 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu, menu);
+        MenuItem item = menu.findItem(R.id.search);
+        SearchView sv = (SearchView) MenuItemCompat.getActionView(item);
+        sv.setOnQueryTextListener(new SearchHandler());
         return true;
 
     }
@@ -61,13 +67,27 @@ public class MainActivity extends AppCompatActivity {
             case R.id.category:
                 Toast.makeText(this, "Choose a Category", Toast.LENGTH_SHORT).show();
                 return true;
+        }
+        return false;
+    }
 
-            case R.id.search:
-                Toast.makeText(this, "Search", Toast.LENGTH_SHORT).show();
-                return true;
+    class SearchHandler implements SearchView.OnQueryTextListener {
 
-            default:return super.onOptionsItemSelected(item);
+
+        public SearchHandler(){
+
         }
 
+        public boolean onQueryTextChange(String txt) {
+            // do nothing... (this method runs when the user types a new character)
+            return true;
+        }
+
+        public boolean onQueryTextSubmit(String txt) {
+            // show the search text in an alert dialog
+            new AlertDialog.Builder(MainActivity.this).setPositiveButton("OK", null).
+                    setMessage(txt).show();
+            return true;
+        }
     }
 }
