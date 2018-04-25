@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Filipino Proverbs Translated</string>
+    <string name="search">Search</string>
+    <string name="categoryMain">Categories</string>
+    <string name="category1">Virtue</string>
+    <string name="category2">Life and Human Nature</string>
+    <string name="category3">Values</string>
+    <string name="category4">Humour</string>
+    <string name="category5">Ethical</string>
+    <string name="category6">Miscellaneous</string>
+    <string name="add">Add a Proverb</string>
+    <string name="update">Update Proverb\'s Meaning</string>
+    <string name="filipino">Filipino Proverb</string>
+    <string name="english">English Translation</string>
+    <string name="meaning">Meaning</string>
+</resources>
