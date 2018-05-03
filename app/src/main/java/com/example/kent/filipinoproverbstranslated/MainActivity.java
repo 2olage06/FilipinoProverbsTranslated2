@@ -1,6 +1,7 @@
 package com.example.kent.filipinoproverbstranslated;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AlertDialog;
@@ -12,7 +13,12 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.ListAdapter;
+import android.widget.ListView;
 import android.widget.Toast;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,6 +26,9 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        Proverbs_Database = new DatabaseHelper(this);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -35,14 +44,25 @@ public class MainActivity extends AppCompatActivity {
         }
         });
 
-        FloatingActionButton fab2 = (FloatingActionButton) findViewById(R.id.floatingActionButton2);
-        fab2.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                Intent updateIntent = new Intent(MainActivity.this, UpdateProverb.class);
-                startActivity(updateIntent);}
-        });
 
-        //DatabaseHelper db = new DatabaseHelper(this);
+      /* ListView listView = (ListView) findViewById(R.id.listView1);
+
+
+        ArrayList<String> theList = new ArrayList<>();
+        Cursor data = Proverbs_Database.getListContent();
+
+        if(data.getCount()== 0)
+        {
+            Toast.makeText(MainActivity.this, "database empty", Toast.LENGTH_LONG).show();
+        }
+        else{
+            while(data.moveToNext()){
+                theList.add(data.getString(1));
+                ListAdapter listAdapter = new ArrayAdapter<>(this, android.R.layout.simple_expandable_list_item_1, theList);
+                listView.setAdapter(listAdapter);
+            }*/
+
+
 
     }
 
@@ -89,5 +109,10 @@ public class MainActivity extends AppCompatActivity {
                     setMessage(txt).show();
             return true;
         }
+    }
+
+    private void populateListView()
+    {
+        Cursor cursor  =  Proverbs_Database.getAllRows();
     }
 }

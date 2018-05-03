@@ -13,4 +13,5 @@
     <string name="filipino">Filipino Proverb</string>
     <string name="english">English Translation</string>
     <string name="meaning">Meaning</string>
+    <string name="spinnerTitle">Choose Category</string>
 </resources>

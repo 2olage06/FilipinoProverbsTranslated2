@@ -1,42 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-   >
+    android:layout_height="match_parent">
+
 
     <EditText
         android:title="@string/filipino"
-        android:id="@+id/addet1"
+        android:id="@+id/filipino"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/filipino" />
+        android:hint="@string/filipino" />
 
     <EditText
         android:title="@string/english"
-        android:id="@+id/addet2"
+        android:id="@+id/english"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/english" />
+        android:hint="@string/english" />
 
     <EditText
         android:title="@string/meaning"
-        android:id="@+id/addet3"
+        android:id="@+id/meaning"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/meaning" />
-
-
-    <RadioGroup
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:hint="@string/meaning" />
 
     <Button
         android:id="@+id/button2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/add" />
+
+
 
 
 </LinearLayout>

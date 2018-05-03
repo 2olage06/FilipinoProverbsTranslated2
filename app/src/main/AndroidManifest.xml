@@ -17,7 +17,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".AddProverb" android:label="@string/add"/>
-        <activity android:name=".UpdateProverb" android:label="@string/update"/>
 
     </application>
 
