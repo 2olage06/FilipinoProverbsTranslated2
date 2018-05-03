@@ -29,10 +29,38 @@
         android:hint="@string/meaning" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/addButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/add"
+        android:onClick="click"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/updateButton"
+        android:text="Update"
+        android:onClick="click"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/deleteButton"
+        android:text="Delete"
+        android:onClick="click"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/listAll"
+        android:onClick="click"
+        android:text="List all"/>
+
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/add" />
+        android:id="@+id/textView1"
+        android:hint="Database here"/>
 
 
 

@@ -22,12 +22,11 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    DatabaseHelper Proverbs_Database;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        Proverbs_Database = new DatabaseHelper(this);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -111,8 +110,4 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void populateListView()
-    {
-        Cursor cursor  =  Proverbs_Database.getAllRows();
-    }
 }
