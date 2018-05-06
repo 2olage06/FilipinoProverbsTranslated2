@@ -9,21 +9,21 @@
 
     <EditText
         android:title="@string/filipino"
-        android:id="@+id/filipino"
+        android:id="@+id/filipino_input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/filipino" />
 
     <EditText
         android:title="@string/english"
-        android:id="@+id/english"
+        android:id="@+id/english_input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/english" />
 
     <EditText
         android:title="@string/meaning"
-        android:id="@+id/meaning"
+        android:id="@+id/meaning_input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/meaning" />
@@ -33,27 +33,27 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/add"
-        android:onClick="click"/>
+        android:onClick="onClick"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/updateButton"
         android:text="Update"
-        android:onClick="click"/>
+        android:onClick="onClick"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/deleteButton"
         android:text="Delete"
-        android:onClick="click"/>
+        android:onClick="onClick"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/listAll"
-        android:onClick="click"
+        android:onClick="onClick"
         android:text="List all"/>
 
     <TextView

@@ -16,7 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AddProverb" android:label="@string/add"/>
+
+        <activity android:name=".AddProverb"> </activity>
 
     </application>
 

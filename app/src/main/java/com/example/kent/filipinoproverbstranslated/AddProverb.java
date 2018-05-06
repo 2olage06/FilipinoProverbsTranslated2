@@ -28,18 +28,19 @@ public class AddProverb extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_proverb);
 
-        filipino = (EditText)findViewById(R.id.filipino);
-        english = (EditText)findViewById(R.id.english);
-        meaning = (EditText)findViewById(R.id.meaning);
+        filipino = (EditText)findViewById(R.id.filipino_input);
+        english = (EditText)findViewById(R.id.english_input);
+        meaning = (EditText)findViewById(R.id.meaning_input);
         textView = (TextView)findViewById(R.id.textView1);
 
         controller = new database_control(this,"",null,1);
     }
 
-    public void click(View v)
+    public void onClick(View v)
     {
         switch (v.getId())
         {
+            //adding to database
             case R.id.addButton:
                 try{
 
@@ -48,30 +49,36 @@ public class AddProverb extends Activity {
                 }
                 controller.insertProverb(filipino.getText().toString(), english.getText().toString(),meaning.getText().toString());
                 break;
+
+            //deleting data
             case R.id.deleteButton:
                 controller.deleteProverb(filipino.getText().toString());
                 break;
+
+            //updating proverbs from database
             case R.id.updateButton:
                 AlertDialog.Builder dialog = new AlertDialog.Builder(AddProverb.this);
                 dialog.setTitle("ENTER NEW PROVERB");
 
-                final EditText new_fil = new EditText(this);
-                final EditText new_eng = new EditText(this);
-                final EditText new_mng = new EditText(this);
-                dialog.setView(new_fil);
-                dialog.setView(new_eng);
-                dialog.setView(new_mng);
+                final EditText newFil = new EditText(this);
+                final EditText newEng = new EditText(this);
+                final EditText newMng = new EditText(this);
+                dialog.setView(newFil);
+                dialog.setView(newEng);
+                dialog.setView(newMng);
 
                 dialog.setPositiveButton("OK", new DialogInterface.OnClickListener(){
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i){
-                        controller.updateProverb(filipino.getText().toString(),new_fil.getText().toString(),
-                                english.getText().toString(), new_eng.getText().toString(),
-                                meaning.getText().toString(),new_mng.getText().toString());
+                        controller.updateProverb(filipino.getText().toString(),newFil.getText().toString(),
+                                english.getText().toString(), newEng.getText().toString(),
+                                meaning.getText().toString(),newMng.getText().toString());
                     }
                 });
 
                 break;
+
+            //listing all rows in text view
             case R.id.listAll:
                 controller.listAll(textView);
                 break;
